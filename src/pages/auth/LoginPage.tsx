@@ -40,7 +40,7 @@ export const LoginPage = () => {
           <div className="w-36 h-40">
             <img
               className="w-full h-full object-contain"
-              src="/src/assets/logoEW-small.png"
+              src="https://res.cloudinary.com/dl9e7nlbu/image/upload/v1681727299/logoEW-small_bnuqea.png"
               alt=""
             />
           </div>

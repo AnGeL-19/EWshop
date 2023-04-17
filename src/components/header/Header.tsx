@@ -18,7 +18,7 @@ export const Header = () => {
           <Link to="/">
             <img
               className="w-full h-full object-cover "
-              src="/src/assets/textEW-small.png"
+              src="https://res.cloudinary.com/dl9e7nlbu/image/upload/v1681727315/textEW-small_lyr3bo.png"
               alt="LogoEW"
             />
           </Link>
