@@ -62,13 +62,12 @@ export const ProductCart = ({ product }: Props) => {
             ${product.price}
           </span>
 
-          {/* <button className="text-gray-700 hover:text-red-700"> */}
             <ButtonIcon
               iconBtn="faTrash"
               onClick={() => onRemoveCartProduct(product)}
               className="hover:text-red-700"
             />
-          {/* </button> */}
+            
         </div>
       </div>
     </article>

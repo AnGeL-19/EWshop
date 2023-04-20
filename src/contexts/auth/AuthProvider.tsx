@@ -1,9 +1,9 @@
-import React, { FC, ReactNode, useReducer } from "react";
+import React, { FC, ReactNode, useEffect, useReducer } from "react";
 
 import Cookie from "js-cookie";
 import { AuthContext } from "./AuthContext";
 import { authReducer } from "./authReducer";
-import { ILogin, IUser } from "../../interfaces/user";
+import { ILogin, IUser } from '../../interfaces/user';
 
 export interface AuthState {
   isLogged: boolean;
@@ -22,6 +22,20 @@ interface Props {
 export const AuthProvider: FC<Props> = ({ children }) => {
   const [state, dispatch] = useReducer(authReducer, Auth_INITIAL_STATE);
 
+  useEffect(() => {
+    
+     if (Cookie.get("token") && Cookie.get("auth")) {
+      
+      const cookieAuth: ILogin = Cookie.get("auth")
+      ? JSON.parse(Cookie.get("auth")!)
+      : [];
+
+      dispatch({ type: "[Auth] - Login", payload: cookieAuth });
+     }
+
+  }, []);
+
+
   const loginUser = async ({
     username,
     password,
@@ -37,6 +51,7 @@ export const AuthProvider: FC<Props> = ({ children }) => {
       const result = await response.json();
 
       Cookie.set("token", result.token);
+      Cookie.set("auth", JSON.stringify({ username }));
       dispatch({ type: "[Auth] - Login", payload: { username, password } });
 
       return {
@@ -84,7 +99,7 @@ export const AuthProvider: FC<Props> = ({ children }) => {
 
   const logout = () => {
     Cookie.remove("token");
-    Cookie.remove("cart");
+    Cookie.remove("auth");
     dispatch({ type: "[Auth] - Logout" });
   };
 

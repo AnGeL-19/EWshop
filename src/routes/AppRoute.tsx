@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {
     BrowserRouter as Router,
     Routes,
-    Route
+    Route,
+    Navigate
 } from "react-router-dom";
 import { HomePage } from '../pages/HomePage';
 import { ProductPage } from '../pages/Product/ProductPage';
@@ -12,8 +13,12 @@ import { RegisterPage } from '../pages/auth/RegisterPage';
 import { Header } from '../components/header/Header';
 import { CartPage } from '../pages/cart/CartPage';
 import { Footer } from '../components/footer/Footer';
+import { AuthContext } from '../contexts/auth/AuthContext';
 
 export const AppRoute = () => {
+
+    const { isLogged } = useContext(AuthContext)
+
   return (
     <div>
         <Router>
@@ -28,8 +33,20 @@ export const AppRoute = () => {
                         <Route path="/products" Component={ProductsPage} />
                         <Route path="/product/:id" Component={ProductPage}/>
                         <Route path="/cart" Component={CartPage}/>
-                        <Route path="/login" Component={LoginPage}/>
-                        <Route path="/register" Component={RegisterPage}/>
+                        {
+                            !isLogged
+                            ?
+                            <>
+                                <Route path="/login" Component={LoginPage}/>
+                                <Route path="/register" Component={RegisterPage}/>
+                            </>
+                            :
+                            <Route path="/" Component={HomePage} />
+                        }
+                        <Route
+                            path="*"
+                            element={<Navigate to="/" replace />}
+                        /> 
                     </Routes>
                 </main>
 

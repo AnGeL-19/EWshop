@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus, faMinus, faTrash} from '@fortawesome/free-solid-svg-icons'
+import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons'
 
 interface Props{
   currentValue: number;
