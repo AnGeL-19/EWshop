@@ -31,7 +31,7 @@ export const Header = () => {
             <ButtonIcon
               key="user"
               className="md:hidden"
-              icon="faUser"
+              iconBtn="faUser"
               onClick={() => setShowMenuAuth(!showMenuAuth)}
             />
 
@@ -43,7 +43,7 @@ export const Header = () => {
           <ButtonIcon
             key="menu"
             className="hidden md:flex"
-            icon="faBars"
+            iconBtn="faBars"
             onClick={() => setShowSidebar(true)}
           />
         </div>

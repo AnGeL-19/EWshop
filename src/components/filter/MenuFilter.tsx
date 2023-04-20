@@ -13,7 +13,7 @@ export const MenuFilter = ({openFilter,setOpenFilter,setValue}:Props) => {
     <div className={ `${openFilter ? 'h-1/2 p-3 flex flex-col':'h-0'} transition-all 
         duration-200 fixed bottom-0 left-0 w-screen bg-white `}>
         <div className="flex justify-end mt-3">
-            <ButtonIcon icon='faClose' onClick={()=> setOpenFilter(false)}/>
+            <ButtonIcon iconBtn='faClose' onClick={()=> setOpenFilter(false)}/>
         </div>
 
         <div>

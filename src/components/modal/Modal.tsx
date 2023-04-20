@@ -16,7 +16,7 @@ export const Modal = ({children, setOpenModal}:Props) => {
         </div>
         <div className='fixed flex flex-col p-2 w-56 bg-white rounded-lg'>
                 <div className="flex justify-end items-end">
-                    <ButtonIcon icon='faClose' onClick={()=>setOpenModal(false)}/>
+                    <ButtonIcon iconBtn='faClose' onClick={()=>setOpenModal(false)}/>
                 </div>
                 <div className=''>
                     { children }

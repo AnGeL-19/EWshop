@@ -21,14 +21,16 @@ export const HomePage = () => {
     <div className="h-full flex flex-col gap-10">
       <section className="flex flex-col items-center">
         <h2 className="font-bold text-xl text-slate-700 mb-5">NEW PRODUCTS</h2>
+  
+        { 
+          loading 
+          ? (
+            <Loading />
+          ) : (
+            <Products products={getLastFourProducts(data || [])} />
+          )
+        }
 
-        {data?.length == 0 ? (
-          <NotData text={`No products`} />
-        ) : loading ? (
-          <Loading />
-        ) : (
-          <Products products={getLastFourProducts(data || [])} />
-        )}
       </section>
 
       <section className="flex flex-col items-center">
@@ -42,13 +44,14 @@ export const HomePage = () => {
           MOST QUALIFIED PRODUCTS
         </h2>
 
-        {data?.length == 0 ? (
-          <NotData text={`No products`} />
-        ) : loading ? (
-          <Loading />
-        ) : (
-          <Products products={getMostQualifiedProduct(data || [])} />
-        )}
+        {
+          loading 
+          ? (
+            <Loading />
+          ) : (
+            <Products products={getMostQualifiedProduct(data || [])} />
+          )
+        }
       </section>
     </div>
   );

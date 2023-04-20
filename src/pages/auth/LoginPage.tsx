@@ -16,7 +16,7 @@ export const LoginPage = () => {
     hasError: false,
     message: "",
   });
-  const { values, handleInputChange, reset } = useForm<ILogin>({
+  const { values, handleInputChange, reset , isError, handleError } = useForm<ILogin>({
     username: "",
     password: "",
   });
@@ -63,6 +63,7 @@ export const LoginPage = () => {
             placeholder="Username..."
             onChange={handleInputChange}
             value={values.username}
+            onError={handleError}
             maxLength={{
               num: 10,
               text: "Maximum 10 characters",
@@ -80,6 +81,7 @@ export const LoginPage = () => {
             placeholder="Password..."
             onChange={handleInputChange}
             value={values.password}
+            onError={handleError}
             maxLength={{
               num: 10,
               text: "Maximum 10 characters",
@@ -92,6 +94,7 @@ export const LoginPage = () => {
 
           <div className="mt-5">
             <Button
+              disabled={isError()}
               type="submit"
               text="LOGIN"
               bgColor="bg-black"

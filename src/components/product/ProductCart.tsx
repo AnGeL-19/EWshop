@@ -62,12 +62,13 @@ export const ProductCart = ({ product }: Props) => {
             ${product.price}
           </span>
 
-          <button className="text-gray-700 hover:text-red-700">
+          {/* <button className="text-gray-700 hover:text-red-700"> */}
             <ButtonIcon
-              icon="faTrash"
+              iconBtn="faTrash"
               onClick={() => onRemoveCartProduct(product)}
+              className="hover:text-red-700"
             />
-          </button>
+          {/* </button> */}
         </div>
       </div>
     </article>

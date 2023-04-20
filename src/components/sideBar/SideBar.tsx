@@ -23,7 +23,7 @@ export const SideBar = ({ showMenu, setShowMenu }: Props) => {
             &&
             <>
                 <div className="flex justify-end mt-3">
-                    <ButtonIcon icon='faClose' onClick={()=>setShowMenu(false)}/>
+                    <ButtonIcon iconBtn='faClose' onClick={()=>setShowMenu(false)}/>
                 </div>
                 <div className='mt-5 flex justify-center'>
 
@@ -52,10 +52,7 @@ export const SideBar = ({ showMenu, setShowMenu }: Props) => {
                             <span className='font-semibold text-base'>Login</span>
                         </Link>
                     }
-                    
 
-                    
-                    
                 </div>
             </>
             

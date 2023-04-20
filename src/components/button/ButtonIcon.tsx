@@ -4,18 +4,19 @@ import { IconComponent } from '../../types/icon'
 import { getIconComponent } from '../../utils/iconCmt'
 
 interface Props {
-  icon: IconComponent,
+  iconBtn: IconComponent,
   className?: string,
-  onClick?: () => void 
+  onClick: () => void 
 }
 
-export const ButtonIcon = ({ icon, className, onClick }: Props) => {
+export const ButtonIcon = ({ iconBtn, className, onClick }: Props) => {
 
   return (
-    <button onClick={onClick}
+    <button 
+    onClick={onClick}
     className={`${className} h-10 w-10 flex justify-center items-center rounded-full hover:shadow-xl hover:bg-gray-100`}>
         <FontAwesomeIcon icon={
-          getIconComponent(icon)
+          getIconComponent(iconBtn)
         } size='lg'/>
     </button>
   )

@@ -178,7 +178,7 @@ export const RegisterPage = () => {
         <Modal setOpenModal={setOpenModal}>
           <div className="flex flex-col justify-center items-center gap-2">
             <p className="font-semibold text-xl text-gray-800">
-              Your ID is{" "}
+              Your ID is 
               <span className="text-cyan-500">{errorMsg.message}</span>
             </p>
 

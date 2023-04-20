@@ -96,6 +96,14 @@ export const CartProvider: FC<Props> = ({ children }) => {
   };
 
   const removeCartProduct = (product: ICartProduct) => {
+    
+    const cookieProducts: ICartProduct[] = Cookie.get("cart")
+        ? JSON.parse(Cookie.get("cart")!)
+        : [];
+
+    const removeProduct = cookieProducts.filter( pro => pro.id !== product.id)
+    Cookie.set("cart", JSON.stringify(removeProduct))
+
     dispatch({ type: "[Cart] - Remove product in cart", payload: product });
   };
 
