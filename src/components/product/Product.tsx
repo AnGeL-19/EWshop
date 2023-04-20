@@ -7,7 +7,7 @@ import { IProduct } from '../../interfaces/product'
 
 export const Product = ({id, title, image, price,rating}:IProduct) => {
   return (
-    <article className="w-72 xs:w-full h-auto">
+    <article className="w-72 sm:w-60 xs:w-full h-auto">
 
         <div className="w-full h-40 ">
             <Link to={`/product/${id}`} className="w-full h-full">

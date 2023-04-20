@@ -18,8 +18,12 @@ export default {
         'sm': {'max': '639px'},
 
         'xs': {'max': '400px'},
-      }
-    },
+      },
+      gridTemplateColumns: {
+        // Simple auto fit
+        'autoFit': 'repeat(auto-fit, minmax(288px, 1fr))',
+      },
+    }
   },
   plugins: [],
 }

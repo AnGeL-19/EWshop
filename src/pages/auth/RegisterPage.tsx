@@ -9,6 +9,7 @@ import { AuthContext } from "../../contexts/auth/AuthContext";
 import { Modal } from "../../components/modal/Modal";
 
 export const RegisterPage = () => {
+
   const { registerUser } = useContext(AuthContext);
   const [openModal, setOpenModal] = useState(false);
 
@@ -17,7 +18,7 @@ export const RegisterPage = () => {
     message: "",
   });
 
-  const { values, handleInputChange, reset } = useForm<IRegister>({
+  const { values, handleInputChange, reset, isError, handleError } = useForm<IRegister>({
     username: "",
     password: "",
     email: "",
@@ -69,12 +70,14 @@ export const RegisterPage = () => {
         )}
 
         <Form onSubmit={submitForm}>
+
           <Input
             key={"username"}
             type="text"
             name="username"
             placeholder="Username..."
             onChange={handleInputChange}
+            onError={handleError}
             value={values.username}
             maxLength={{
               num: 10,
@@ -92,6 +95,7 @@ export const RegisterPage = () => {
             name="password"
             placeholder="Password..."
             onChange={handleInputChange}
+            onError={handleError}
             value={values.password}
             maxLength={{
               num: 10,
@@ -118,7 +122,16 @@ export const RegisterPage = () => {
             name="firstname"
             placeholder="Firstname..."
             onChange={handleInputChange}
+            onError={handleError}
             value={values.firstname}
+            maxLength={{
+              num: 10,
+              text: "Maximum 10 characters",
+            }}
+            minLength={{
+              num: 2,
+              text: "Minimum 2 characters",
+            }}
           />
 
           <Input
@@ -127,11 +140,22 @@ export const RegisterPage = () => {
             name="lastname"
             placeholder="Lastname..."
             onChange={handleInputChange}
+            onError={handleError}
             value={values.lastname}
+            maxLength={{
+              num: 10,
+              text: "Maximum 10 characters",
+            }}
+            minLength={{
+              num: 2,
+              text: "Minimum 2 characters",
+            }}
+             
           />
 
           <div className="mt-5">
             <Button
+              disabled={isError()}
               type="submit"
               text="REGISTER"
               bgColor="bg-black"

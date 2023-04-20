@@ -72,7 +72,7 @@ export const ProductsPage = () => {
           />
         </div>
 
-        <div className="flex flex-col gap-7 items-center">
+        <div className="flex flex-col justify-center gap-7 items-center">
           {error ? (
             <div className="w-full flex justify-center">
               <span className="font-bold text-4xl text-gray-700">
