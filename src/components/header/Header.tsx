@@ -12,8 +12,10 @@ export const Header = () => {
   const [showMenuAuth, setShowMenuAuth] = useState(false);
 
   return (
-    <header className="w-full px-5 pb-3 bg-white sm:px-3 fixed top-0">
-      <div className="pt-3 pb-1 flex flex-row justify-between items-center">
+    <header className="w-full py-3 bg-white sm:px-3 fixed top-0">
+
+      <div className="flex px-2 flex-row max-w-screen-xl mx-auto justify-between items-center">
+
         <div className="w-44 h-16 sm:w-36 sm:h-12">
           <Link to="/">
             <img

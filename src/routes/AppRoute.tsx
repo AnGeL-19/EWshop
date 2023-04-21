@@ -27,7 +27,7 @@ export const AppRoute = () => {
               
                 <Header />
                 
-                <main className="mt-36 mx-5 md:mx-3">
+                <main className="mt-36 max-w-screen-xl w-full mx-auto px-2">
                     <Routes>
                         <Route path="/" Component={HomePage} />
                         <Route path="/products" Component={ProductsPage} />
@@ -47,6 +47,7 @@ export const AppRoute = () => {
                             path="*"
                             element={<Navigate to="/" replace />}
                         /> 
+                        
                     </Routes>
                 </main>
 

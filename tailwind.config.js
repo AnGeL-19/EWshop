@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      maxWidth: {
+        'screen-xl': '1280px',
+      },
       screens: {
         '2xl': {'max': '1535px'},
 
@@ -23,6 +26,7 @@ export default {
         // Simple auto fit
         'autoFit': 'repeat(auto-fit, minmax(288px, 1fr))',
       },
+      
     }
   },
   plugins: [],
