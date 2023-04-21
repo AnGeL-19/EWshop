@@ -16,7 +16,7 @@ export const LinkCart = () => {
             &&
             <div className="absolute w-4 h-4 bg-red-600 top-0 right-0 rounded-full flex justify-center items-center">
                 <span className="text-xs font-semibold text-white ">
-                  {cart.length > 9 ? `+${cart.length}`: cart.length }
+                  {cart.length > 9 ? `+9`: cart.length }
                 </span>
             </div>
         }
