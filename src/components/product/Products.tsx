@@ -27,10 +27,7 @@ export const Products = ({products}:Props) => {
               />
             ))
           }
-
-      {/* </div> */}
-        
-        
+     
   </div>
   )
 }

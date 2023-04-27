@@ -16,7 +16,7 @@ export const SideBar = ({ showMenu, setShowMenu }: Props) => {
 
   return (
     <div className={ `${showMenu ? 'w-72 p-3 flex flex-col':'w-0'} transition-all 
-    duration-200 fixed top-0 right-0 min-h-screen bg-white `}>
+    duration-200 fixed top-0 right-0 min-h-screen bg-white z-10`}>
     
         {
             showMenu

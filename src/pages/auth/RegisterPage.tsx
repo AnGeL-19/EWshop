@@ -8,7 +8,7 @@ import { IRegister } from "../../interfaces/user";
 import { AuthContext } from "../../contexts/auth/AuthContext";
 import { Modal } from "../../components/modal/Modal";
 
-export const RegisterPage = () => {
+const RegisterPage = () => {
 
   const { registerUser } = useContext(AuthContext);
   const [openModal, setOpenModal] = useState(false);
@@ -153,7 +153,7 @@ export const RegisterPage = () => {
              
           />
 
-          <div className="mt-5">
+          <div className="mt-5 w-full">
             <Button
               disabled={isError()}
               type="submit"
@@ -194,3 +194,4 @@ export const RegisterPage = () => {
     </div>
   );
 };
+export default RegisterPage

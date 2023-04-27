@@ -10,7 +10,7 @@ import { IProduct } from "../interfaces/product";
 import { Loading } from "../components/Loading";
 import { NotData } from "../components/NotData";
 
-export const HomePage = () => {
+const HomePage = () => {
   const { data, loading, error } = useData<IProduct[]>("products", "GET");
 
   if (error) {
@@ -56,3 +56,5 @@ export const HomePage = () => {
     </div>
   );
 };
+
+export default HomePage

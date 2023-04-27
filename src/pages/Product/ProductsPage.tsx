@@ -13,7 +13,7 @@ import { useSearchParams } from "react-router-dom";
 import { getFilterRateProduct } from "../../utils/changeData";
 import { Loading } from "../../components/Loading";
 
-export const ProductsPage = () => {
+const ProductsPage = () => {
   const [searchParams] = useSearchParams();
 
   const [openFilter, setOpenFilter] = useState(false);
@@ -103,3 +103,5 @@ export const ProductsPage = () => {
     </div>
   );
 };
+
+export default ProductsPage

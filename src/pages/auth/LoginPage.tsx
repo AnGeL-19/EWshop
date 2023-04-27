@@ -8,7 +8,7 @@ import { ILogin } from "../../interfaces/user";
 import { AuthContext } from "../../contexts/auth/AuthContext";
 import { Modal } from "../../components/modal/Modal";
 
-export const LoginPage = () => {
+const LoginPage = () => {
   const { loginUser } = useContext(AuthContext);
   const [openModal, setOpenModal] = useState(false);
 
@@ -92,7 +92,7 @@ export const LoginPage = () => {
             }}
           />
 
-          <div className="mt-5">
+          <div className="mt-5 w-full" >
             <Button
               disabled={isError()}
               type="submit"
@@ -133,3 +133,5 @@ export const LoginPage = () => {
     </div>
   );
 };
+
+export default LoginPage

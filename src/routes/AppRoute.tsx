@@ -1,19 +1,21 @@
-import React, { useContext } from 'react'
+import React, { Suspense, useContext } from 'react'
 import {
     BrowserRouter as Router,
     Routes,
     Route,
     Navigate
 } from "react-router-dom";
-import { HomePage } from '../pages/HomePage';
-import { ProductPage } from '../pages/Product/ProductPage';
-import { ProductsPage } from '../pages/Product/ProductsPage';
-import { LoginPage } from '../pages/auth/LoginPage';
-import { RegisterPage } from '../pages/auth/RegisterPage';
+
 import { Header } from '../components/header/Header';
-import { CartPage } from '../pages/cart/CartPage';
 import { Footer } from '../components/footer/Footer';
 import { AuthContext } from '../contexts/auth/AuthContext';
+
+const HomePage = React.lazy(() => import('../pages/HomePage'))
+const ProductPage = React.lazy(() => import('../pages/Product/ProductPage'))
+const ProductsPage = React.lazy(() => import('../pages/Product/ProductsPage'))
+const LoginPage = React.lazy(() => import('../pages/auth/LoginPage'))
+const RegisterPage = React.lazy(() => import('../pages/auth/RegisterPage'))
+const CartPage = React.lazy(() => import('../pages/cart/CartPage'))
 
 export const AppRoute = () => {
 
@@ -28,27 +30,31 @@ export const AppRoute = () => {
                 <Header />
                 
                 <main className="mt-36 max-w-screen-xl w-full mx-auto px-2">
-                    <Routes>
-                        <Route path="/" Component={HomePage} />
-                        <Route path="/products" Component={ProductsPage} />
-                        <Route path="/product/:id" Component={ProductPage}/>
-                        <Route path="/cart" Component={CartPage}/>
-                        {
-                            !isLogged
-                            ?
-                            <>
-                                <Route path="/login" Component={LoginPage}/>
-                                <Route path="/register" Component={RegisterPage}/>
-                            </>
-                            :
+                    
+                    <Suspense fallback={null}>
+                        <Routes>
                             <Route path="/" Component={HomePage} />
-                        }
-                        <Route
-                            path="*"
-                            element={<Navigate to="/" replace />}
-                        /> 
-                        
-                    </Routes>
+                            <Route path="/products" Component={ProductsPage} />
+                            <Route path="/product/:id" Component={ProductPage}/>
+                            <Route path="/cart" Component={CartPage}/>
+                            {
+                                !isLogged
+                                ?
+                                <>
+                                    <Route path="/login" Component={LoginPage}/>
+                                    <Route path="/register" Component={RegisterPage}/>
+                                </>
+                                :
+                                <Route path="/" Component={HomePage} />
+                            }
+                            <Route
+                                path="*"
+                                element={<Navigate to="/" replace />}
+                            /> 
+                            
+                        </Routes>
+                    </Suspense>
+                    
                 </main>
 
                 <Footer />

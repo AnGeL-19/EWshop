@@ -8,7 +8,7 @@ import { CartContext } from "../../contexts/cart/CartContext";
 import { Loading } from "../../components/Loading";
 import { NotData } from "../../components/NotData";
 
-export const ProductPage = () => {
+const ProductPage = () => {
   const path = useParams();
   const { cart, addProductToCart } = useContext(CartContext);
 
@@ -97,3 +97,5 @@ export const ProductPage = () => {
     </div>
   );
 };
+
+export default ProductPage

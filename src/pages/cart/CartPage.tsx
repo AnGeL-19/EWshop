@@ -6,7 +6,7 @@ import { NotData } from "../../components/NotData";
 import { Modal } from "../../components/modal/Modal";
 import { Button } from "../../components/button/Button";
 
-export const CartPage = () => {
+const CartPage = () => {
   const { cart } = useContext(CartContext);
   const [openModal, setOpenModal] = useState(false);
 
@@ -49,3 +49,5 @@ export const CartPage = () => {
     </>
   );
 };
+
+export default CartPage
