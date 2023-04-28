@@ -10,7 +10,8 @@ interface Props{
 export const Products = ({products}:Props) => {
 
   return (
-    <div className="w-full py-5 sm:flex grid gap-7 justify-center sm:grid-cols-none sm:flex-wrap sm:gap-y-7 grid-cols-autoFit ">
+    <div className="w-full py-5 sm:flex grid gap-7 justify-center justify-items-center grid-cols-autoFit 
+     sm:grid-cols-none sm:flex-wrap sm:gap-y-7 ">
 
         {
             products.length === 0
