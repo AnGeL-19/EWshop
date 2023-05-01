@@ -18,7 +18,7 @@ export const Product = ({id, title, image, price,rating}:IProduct) => {
         <div className='flex flex-col items-center gap-1'>
 
             <Link to={`/product/${id}`} >
-                <h4 className="text-ellipsis overflow-hidden text-sm font-semibold w-36 h-10 hover:text-slate-500 ">
+                <h4 className="line-clamp-2 text-sm font-semibold w-36 h-10 hover:text-slate-500 ">
                     {title}
                 </h4>
             </Link>

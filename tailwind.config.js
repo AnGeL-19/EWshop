@@ -24,7 +24,7 @@ export default {
       },
       gridTemplateColumns: {
         // Simple auto fit
-        'autoFit': 'repeat(auto-fit, minmax(240px, 1fr))',
+        'autoFit': 'repeat(auto-fit, minmax(min(240px, 100%), 1fr))',
       },
       
     }

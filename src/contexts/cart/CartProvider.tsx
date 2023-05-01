@@ -58,10 +58,9 @@ export const CartProvider: FC<Props> = ({ children }) => {
       0
     );
     const subTotal = state.cart.reduce(
-      (prev, current) => current.price * current.quantity + prev,
+      (prev, current) => parseFloat((current.price * current.quantity).toFixed(2)) + prev,
       0
     );
-
     const orderSummary = {
       numberOfItems,
       subTotal,

@@ -12,7 +12,7 @@ export const Header = () => {
   const [showMenuAuth, setShowMenuAuth] = useState(false);
 
   return (
-    <header className="w-full py-3 bg-white sm:px-3 fixed top-0">
+    <header className="w-full py-3 bg-white fixed top-0">
 
       <div className="flex px-2 flex-row max-w-screen-xl mx-auto justify-between items-center">
 
